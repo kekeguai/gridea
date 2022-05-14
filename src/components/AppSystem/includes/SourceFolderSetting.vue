@@ -16,8 +16,9 @@
 
 <script lang="ts">
 import {
-  ipcRenderer, IpcRendererEvent, remote,
+  ipcRenderer, IpcRendererEvent,
 } from 'electron'
+import remote from '@electron/remote'
 import { Vue, Component } from 'vue-property-decorator'
 import { State } from 'vuex-class'
 

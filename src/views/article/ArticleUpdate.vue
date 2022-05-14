@@ -210,7 +210,7 @@
 
 <script lang="ts">
 import {
-  ipcRenderer, IpcRendererEvent, shell, clipboard, remote,
+  ipcRenderer, IpcRendererEvent, shell,
 } from 'electron'
 import {
   Vue, Component, Prop, Watch,
@@ -696,6 +696,9 @@ export default class ArticleUpdate extends Vue {
       border-radius: 20px;
       margin-left: 8px;
       outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transition: all 0.3s;
       i {
         font-weight: bold;

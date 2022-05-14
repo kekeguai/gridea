@@ -22,6 +22,10 @@ module.exports = {
   pluginOptions: {
     electronBuilder: {
       nodeIntegration: true,
+      contextIsolation: false,
+      chainWebpackMainProcess: (config) => {
+        config.output.filename('background.js')
+      },
       builderOptions: {
         productName: 'Gridea',
         win: {

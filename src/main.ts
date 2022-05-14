@@ -6,8 +6,8 @@ import '@/assets/styles/main.less'
 import VueI18n from 'vue-i18n'
 import Prism from 'prismjs'
 import VueShortkey from 'vue-shortkey'
-import { remote } from 'electron'
-import * as Sentry from '@sentry/electron'
+import remote from '@electron/remote'
+// import { init } from '@sentry/electron'
 import locale from './assets/locales'
 import App from './App.vue'
 import router from './router'
@@ -20,13 +20,14 @@ ga.event('Client', 'show', {
   evLabel: 'startup',
 })
 
-Sentry.init({ dsn: 'https://6a6dacc57a6a4e27a88eb31596c152f8@sentry.io/1887150' })
+// init({ dsn: 'https://6a6dacc57a6a4e27a88eb31596c152f8@sentry.io/1887150' })
+console.log('此时的 app', remote.app)
 
 const defaultLocale = ({
   'zh-CN': 'zhHans',
   'zh-TW': 'zh_TW',
   'en-US': 'en',
-} as any)[remote.app.getLocale() || 'zh-CN']
+} as any)[(remote.app && remote.app.getLocale()) || 'zh-CN']
 
 Vue.use(VueI18n)
 const i18n = new VueI18n({

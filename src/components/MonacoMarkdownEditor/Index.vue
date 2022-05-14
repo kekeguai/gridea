@@ -43,8 +43,8 @@ export default class MonacoMarkdownEditor extends Vue {
       colorDecorators: true,
       extraEditorClassName: 'gridea-editor',
       folding: false,
-      highlightActiveIndentGuide: false,
-      renderIndentGuides: false,
+      // highlightActiveIndentGuide: false,
+      // renderIndentGuides: false,
       renderLineHighlight: 'none',
       scrollbar: {
         vertical: 'auto',
